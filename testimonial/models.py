@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 
 
 class Testimonial(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    is_active = models.BooleanField(default=False)
-    description = models.TextField()
+    user = models.OneToOneField(user, on_delete=models.CASCADE)
+    is_active = models.BooleanField(default=True)
+    quote = models.TextField()
     role = models.CharField(max_length=250)
-    image = models.ImageField(upload_to='testimonial/', blank=True, null=True)
+    image = models.ImageField(upload_to='testimonial', blank=True, null=True)
