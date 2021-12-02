@@ -1,6 +1,60 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %} Home {% endblock %}
 
+
 {% block content %}
-<p>Home page</p>
+
+<!-- main image & intro text -->
+
+<section id="intro">
+    <div class="container-lg">
+        <div class="row justify-content-center align-items-center">
+
+            <div class="col-md-5 text-center text-md-start">
+                <h1>
+                    <div class="display-2">Ephrem Wube</div>
+                    <div class="display-6 text-muted">Full Stack Developer</div>
+                </h1>
+                <p class="lead my-4 text-muted"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+                    inventore nulla porro, sunt explicabo minus et! Repellendus tempora voluptates nulla?
+                </p>
+                <a href="#pricing" class="btn btn-danger btn-lg opacity-85">Contace me</a>
+                <!-- open sidebar / off canvas -->
+                <a href="#sidebar" class="d-block mt-3 text-secondary" data-bs-toggle="offcanvas" role="button"
+                    aria-controls="sidebar">
+                    Explore my Skill
+                </a>
+            </div>
+            <div class="col-md-5 text-center d-none d-md-block">
+                <!-- tooltip -->
+                <span class="tt" data-bs-placement="bottom" title="Profile Picture">
+                    <img class="img-fluid rounded w-50" src="{% static 'images/profile1.jpg' %}" alt="profile picture">
+                </span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- offcanvas -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="sidebar-label">My Skill</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+        </ul>
+    </div>
+</div>
+
 {% endblock %}
