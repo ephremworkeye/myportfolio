@@ -41,8 +41,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'portfolio',
     'skill',
-    'testimonial'
-    'account'
+    'testimonial',
+    'account',
+    'contact',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
