@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 
 class Testimonial(models.Model):
-    user = models.OneToOneField(user, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
     quote = models.TextField()
     role = models.CharField(max_length=250)

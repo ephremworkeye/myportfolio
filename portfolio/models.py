@@ -7,14 +7,13 @@ from skill.models import Skill
 
 class Portfolio(models.Model):
     name = models.CharField(max_length=150)
+    skill = models.ForeignKey(Skill, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=150)
-    image = models.ImageField(upload_to='portfolios/', blank=True)
+    image = models.ImageField(upload_to='portfolios', blank=True)
     is_published = models.BooleanField(default=True, null=True)
     description = models.TextField(blank=True)
     website_link = models.URLField(max_length=250, blank=True)
     github_link = models.URLField(max_length=350, blank=True)
-    skill = models.ManyToManyField(
-        'Skill', through='PortfolioSkill', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
