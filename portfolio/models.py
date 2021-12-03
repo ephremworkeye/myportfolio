@@ -1,14 +1,16 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
-from skill.models import Skill
+from django.urls import reverse
+from skill.models import Skill, Library
 
 # Create your models here.
 
 
 class Portfolio(models.Model):
     name = models.CharField(max_length=150)
-    skill = models.ForeignKey(Skill, on_delete=models.CASCADE)
+    skill = models.ManyToManyField(Skill)
+    library = models.ManyToManyField(Library, blank=True, null=True)
     slug = models.SlugField(max_length=150)
     image = models.ImageField(upload_to='portfolios', blank=True)
     is_published = models.BooleanField(default=True, null=True)
@@ -22,6 +24,9 @@ class Portfolio(models.Model):
         if not self.id:
             self.slug = slugify(self.name)
         super(Portfolio, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('portfolio:portfolio_detail', args=[self.id, self.slug])
 
     class Meta:
         ordering = ('-created_at',)
