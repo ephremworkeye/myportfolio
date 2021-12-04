@@ -8,21 +8,21 @@
 <!-- main image & intro text -->
 
 <section id="intro">
-    <div class="container-lg">
+    <div class="container">
         <div class="row justify-content-center align-items-center">
 
             <div class="col-md-5 text-center text-md-start">
                 <h1>
-                    <div class="display-2">Ephrem Wube</div>
+                    <div class="display-3 fw-bolder">Ephrem Wube</div>
                     <div class="display-6 text-muted">Full Stack Developer</div>
                 </h1>
                 <p class="lead my-4 text-muted"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
                     inventore nulla porro, sunt explicabo minus et! Repellendus tempora voluptates nulla?
                 </p>
-                <a href="#contact" class="btn btn-danger btn-lg opacity-85">Contace me</a>
+                <a href="#contact" class="btn btn-danger btn-lg opacity-85 me-3">Contace me</a>
                 <!-- open sidebar / off canvas -->
-                <a href="#sidebar" class="d-block mt-3 text-secondary" data-bs-toggle="offcanvas" role="button"
-                    aria-controls="sidebar">
+                <a href="#sidebar" class="btn btn-outline-danger btn-lg opacity-85" data-bs-toggle="offcanvas"
+                    type="button" aria-controls="sidebar">
                     Explore my Skill
                 </a>
             </div>
@@ -40,6 +40,8 @@
 
 <!-- end main image -->
 
+
+<!-- portfolio list -->
 
 <section id="portfolio" class="bg-light mt-5 py-5">
     <div class="container py-3">
@@ -97,6 +99,122 @@
     </div>
 </section>
 
+<!-- end portfolio list -->
+
+<!-- about -->
+
+<section id="about">
+    <div class="container py-3">
+        <div class="text-center">
+            <h2 class="display-4 text-monospace text-secondary">Think aloud and solve the problem</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row my-5 g-3 justify-content-around align-items-center">
+            <div class="col-lg-5">
+                <img class="img-fluid rounded float-start" src="{% static 'images/whiteboard1.jpg' %}"
+                    alt="White board">
+            </div>
+            <div class="col-lg-6">
+                <h3 class="text-monospace">
+                    Solving the probem
+                </h3>
+                <p class="text-lead fs-5">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil quasi ad nemo accusamus laudantium
+                    eligendi aut rem deserunt veniam nulla! Ratione nihil alias eos, maxime laudantium saepe illo
+                    repudiandae necessitatibus, eius vel similique delectus dolorum nostrum facilis placeat voluptate
+                    exercitationem.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container py-3">
+        <div class="text-center">
+            <h2 class="display-4 text-monospace text-secondary">Skill Rated</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row my-5 g-3 justify-content-around align-items-center">
+            <div class="col-lg-6">
+                {% for skill in skills %}
+                {% with value=skill.rate %}
+                <div class="text-monospace">
+                    {{ skill.name }}
+                </div>
+
+                <div class="progress my-2">
+
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger opacity-85"
+                        role="progressbar" style="width: {{ value }}%;" aria-valuenow="100" aria-valuemin="0"
+                        aria-valuemax="100">{{ value }}%</div>
+                </div>
+
+                {% endwith %}
+                {% endfor%}
+            </div>
+            <div class="col-lg-5">
+                <img class="img-fluid rounded float-start" src="{% static 'images/skill-red.jpg' %}" alt="White board">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container py-3">
+            <div class="text-center">
+                <h2 class="display-4 text-monospace text-secondary">Team Player</h2>
+            </div>
+        </div>
+        <div class="row my-5 g-3 justify-content-around align-items-center">
+            <div class="col-lg-5">
+                <img class="img-fluid rounded float-start" src="{% static 'images/team1.jpg' %}" alt="White board">
+            </div>
+            <div class="col-lg-6">
+                <p class="lead">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia reiciendis id dolorem fuga
+                    eligendi, corporis accusantium dolorum laboriosam ducimus ipsa. Optio corporis corrupti nihil
+                    voluptates, atque nostrum dolorem harum sit.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- end about -->
+
+<!-- testimonial -->
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        {% for testimonial in testimonials %}
+        <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+            <img src="{% static 'images/background3.png' %}" class="d-block w-100" alt="..." style="height: 400px;">
+            <div class="carousel-caption d-none d-md-block vertical-align">
+
+                <h4 class="py-3">{{ testimonial.user.username }}</h4>
+                <p class="pb-5">{{ testimonial.quote}}</p>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- end testimonial -->
+
 
 
 <!-- offcanvas -->
@@ -107,11 +225,11 @@
     </div>
     <div class="offcanvas-body">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-            <li class="list-group-item">A fourth item</li>
-            <li class="list-group-item">And a fifth one</li>
+            {% for skill in skills %}
+            <li class="list-group-item">{{ skill.name }}</li>
+            {% empty %}
+            <li class="list-group-item">Skill not listed</li>
+            {% endfor %}
         </ul>
     </div>
 </div>
