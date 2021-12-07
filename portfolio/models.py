@@ -12,6 +12,7 @@ class Portfolio(models.Model):
     skill = models.ManyToManyField(Skill)
     library = models.ManyToManyField(Library, blank=True, null=True)
     slug = models.SlugField(max_length=150)
+    model_design_url = models.URLField(max_length=250, blank=True, null=True)
     image = models.ImageField(upload_to='portfolios', blank=True)
     is_published = models.BooleanField(default=True, null=True)
     description = models.TextField(blank=True)
