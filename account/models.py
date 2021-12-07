@@ -7,8 +7,8 @@ from skill.models import Skill
 
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    skill = models.ForeignKey(
-        Skill, on_delete=models.CASCADE, related_name='user_skills')
+    skill = models.ManyToManyField(
+        Skill, related_name='user_skills',  blank=True)
     linkden_url = models.URLField(max_length=250, blank=True)
     website_url = models.URLField(max_length=250, blank=True, null=True)
     image = models.ImageField(upload_to='profile', blank=True, null=True)

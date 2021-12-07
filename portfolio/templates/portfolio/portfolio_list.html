@@ -22,8 +22,11 @@
                     inventore nulla porro, sunt explicabo minus et! Repellendus tempora voluptates nulla?
                 </p>
                 <a href="{% url 'contact:contact' %}" class="btn btn-danger btn-lg opacity-100 me-3">Contace me</a>
-                <a href="{% url 'contact:contact' %}" class="btn btn-outline-danger btn-lg opacity-100 me-3">Download
+                {% for profile in profiles %}
+                <a href="{{ profile.resume.url }}" download="{{ profile.resume.url }}"
+                    class="btn btn-outline-danger btn-lg opacity-100 me-3">Download
                     Resume</a>
+                {% endfor %}
             </div>
             <div class="col-md-5 text-center d-none d-md-block">
                 <!-- tooltip -->
@@ -263,6 +266,7 @@
             {% empty %}
             <li class="list-group-item">Skill not listed</li>
             {% endfor %}
+
         </ul>
     </div>
 </div>

@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('portfolio.urls', namespace='portfolio')),
     path('contact/', include('contact.urls', namespace='contact')),
+    path('account/', include('account.urls', namespace='account')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

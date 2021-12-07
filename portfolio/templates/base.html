@@ -45,7 +45,7 @@
                         <a href="#portfolio" class="nav-link">Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#review" class="nav-link">Reviews</a>
+                        <a href="#review" class="nav-link">Review</a>
                     </li>
                     <li class="nav-item ms-2 d-none d-md-inline">
                         <a href="{% url 'contact:contact' %}"
@@ -66,8 +66,8 @@
         <div class="container-fluid py-5">
             <div class="row text-center">
                 <div class="col">
-                    <p> <a href="#" class="nav-link text-light">About</a> </p>
-                    <p> <a href="#" class="nav-link text-light">Contact</a> </p>
+                    <p> <a href="#about" class="nav-link text-light">About</a> </p>
+                    <p> <a href="{% url 'contact:contact' %}" class="nav-link text-light">Contact</a> </p>
 
                 </div>
                 <div class="col">
@@ -76,8 +76,8 @@
 
                 </div>
                 <div class="col">
-                    <p> <a href="#" class="nav-link text-light">Reviews</a> </p>
-                    <p> <a href="#portfolio" class="nav-link text-light">Portfolio</a></p>
+                    <p> <a href="#review" class="nav-link text-light">Review</a> </p>
+                    <p> <a href="{% url 'portfolio:portfolio_list' %}" class="nav-link text-light">Portfolio</a></p>
                 </div>
             </div>
             <div class="row">
@@ -103,7 +103,7 @@
             </div>
             <div class="row">
                 <div class="col text-center bg-dark text-light">
-                    © 2021 Copyright: <a class="text-light ps-2" href="#">ethiopython.com</a>
+                    © 2021 Copyright: <a class="text-light ps-2" href="#">ephrempro.com</a>
 
                 </div>
 
