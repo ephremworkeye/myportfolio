@@ -15,8 +15,8 @@
     </div>
     {% else %}
 
-    <div class="container my-5 col-lg-9">
-        <form action="" method="post" class="p-1">
+    <div class="container my-5 col-lg-7">
+        <form method="post" class="form-control-lg">
             {{ form|crispy }}
             {% csrf_token %}
             <input type="submit" role="button" value="Contact" class="btn btn-lg btn-danger opacity-100">
