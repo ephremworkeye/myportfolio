@@ -10,7 +10,7 @@ from skill.models import Skill, Library
 class Portfolio(models.Model):
     name = models.CharField(max_length=150)
     skill = models.ManyToManyField(Skill)
-    library = models.ManyToManyField(Library, blank=True, null=True)
+    library = models.ManyToManyField(Library, blank=True)
     slug = models.SlugField(max_length=150)
     model_design_url = models.URLField(max_length=250, blank=True, null=True)
     image = models.ImageField(upload_to='portfolios', blank=True)
