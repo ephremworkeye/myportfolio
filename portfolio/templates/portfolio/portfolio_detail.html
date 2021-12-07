@@ -2,7 +2,7 @@
 {% block title %} detail {% endblock %}
 
 {% block content %}
-<div class="text-center">
+<div class="text-center mt-5">
     <h2 class="display-4 font-monospace text-secondary">{{ portfolio.name }}</h2>
 </div>
 <div class="container py-5">
@@ -59,13 +59,16 @@
 
             </div>
 
-
-
         </div>
-        <div class="container my-3">
-            <p class="text-monospace">
-                {{ portfolio.description }}
-            </p>
+
+        <div class="card text-center mt-3">
+            <div class="card-header">
+                Wanna see more?
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{ portfolio.description }}</p>
+                <a href="{{ portfolio.model_design_url }}" class="btn btn-danger">Database Schema</a>
+            </div>
 
         </div>
     </div>

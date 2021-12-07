@@ -60,7 +60,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="card-group">
+        <div class="row row-cols-1 row-cols-md-3 g-1">
             {% for portfolio in portfolios %}
             <div class="card border-light">
                 <a href="{{ portfolio.get_absolute_url }}"><img src="{{ portfolio.image.url }}" class="card-img-top"
