@@ -1,3 +1,26 @@
 /* body {
     background-color: rgba(238, 238, 232, 0.959)
 } */
+
+.inner {
+    overflow: hidden;
+}
+
+.inner img {
+    transition: all 1.5s ease;
+}
+.inner:hover img{
+    transform: scale(1.5);
+}
+
+.card{
+    border: none;
+}
+.card:hover{
+    box-shadow: 0 10px 10px #817d7d;
+}
+
+img:hover {
+    transform: scale(1.05);
+
+}

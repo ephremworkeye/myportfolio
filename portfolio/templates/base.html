@@ -36,8 +36,11 @@
                 aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end align-center font-monospace fs-5" id="main-nav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse font-monospace fs-5" id="main-nav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id='nav-menu'>
+                    <li class="nav-item">
+                        <a href="{% url 'portfolio:portfolio_list' %}" class="nav-link active">Home</a>
+                    </li>
                     <li class="nav-item">
                         <a href="#about" class="nav-link">About</a>
                     </li>
