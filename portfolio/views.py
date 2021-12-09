@@ -5,6 +5,8 @@ from skill.models import Skill
 from account.models import Profile
 from testimonial.models import Testimonial
 from contact.forms import ContactForm
+from comment.forms import PortfolioCommentForm
+from comment.models import Comment
 
 
 # Create your views here.
@@ -38,4 +40,20 @@ def portfolio_list(request):
 
 def portfolio_detail(request, id, slug):
     portfolio = get_object_or_404(Portfolio, id=id, slug=slug)
-    return render(request, 'portfolio/portfolio_detail.html', {'portfolio': portfolio})
+
+    comments = portfolio.comments.filter(is_active=True)
+    new_comment = None
+    if request.method == "POST":
+        comment_form = PortfolioCommentForm(data=request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.portfolio = portfolio
+            new_comment.save()
+    else:
+        comment_form = PortfolioCommentForm()
+
+    return render(request, 'portfolio/portfolio_detail.html', {
+        'portfolio': portfolio,
+        'comments': comments,
+        'comment_form': comment_form,
+        'new_comment': new_comment})

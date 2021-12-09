@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'portfolio',
     'skill',
     'testimonial',
+    'comment',
     'account',
     'contact',
     'django.contrib.admin',

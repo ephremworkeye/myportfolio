@@ -50,11 +50,18 @@
                     <li class="nav-item">
                         <a href="#review" class="nav-link">Review</a>
                     </li>
-                    <li class="nav-item ms-2 d-none d-md-inline">
+                    <li class="nav-item">
                         <a href="{% url 'contact:contact' %}"
-                            class="btn btn-outline-danger opacity-100 fs-5">Contact</a>
+                            class="btn btn-outline-danger opacity-100 p-2 fs-5">Contact</a>
                     </li>
+
                 </ul>
+                <form class="d-flex col-lg-5">
+                    <input class="form-control me-2 fs-5" type="search" placeholder="Search Portfolio"
+                        aria-label="Search">
+                    <button class="btn btn-outline-danger fs-5" type="submit">Search</button>
+                </form>
+
             </div>
         </div>
     </nav>
