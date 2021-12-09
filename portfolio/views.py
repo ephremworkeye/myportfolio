@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib.postgres.search import SearchVector
 from .models import Portfolio
 from skill.models import Skill
 from account.models import Profile
@@ -57,3 +58,10 @@ def portfolio_detail(request, id, slug):
         'comments': comments,
         'comment_form': comment_form,
         'new_comment': new_comment})
+
+
+def portfolio_search(request):
+    query = request.GET.get('query', '')
+    results = Portfolio.objects.annotate(
+        search=SearchVector('title', 'body'),).filter(search=query)
+    return render(request, 'portfolio/search.html', {'query': query, 'results': results})

@@ -56,9 +56,9 @@
                     </li>
 
                 </ul>
-                <form class="d-flex col-lg-5">
+                <form action="{% url 'portfolio:search' %}" class="d-flex col-lg-6" method="get">
                     <input class="form-control me-2 fs-5" type="search" placeholder="Search Portfolio"
-                        aria-label="Search">
+                        aria-label="Search" name="query">
                     <button class="btn btn-outline-danger fs-5" type="submit">Search</button>
                 </form>
 
