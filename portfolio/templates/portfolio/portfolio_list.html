@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load portfolio_tags %}
 {% load crispy_forms_tags %}
 {% load static %}
 {% block title %} Home {% endblock %}
@@ -27,6 +28,19 @@
                     class="btn btn-outline-danger btn-lg opacity-100 me-3">Download
                     Resume</a>
                 {% endfor %}
+                <div class="container">
+                    <div class="row text-center mt-4 rounded">
+                        <div class="col bg-light col-5 me-5">
+                            <h3 class="display-4 font-monospace text-danger">{% total_portfolios %}+</h3>
+                            <p class="font-monospace fs-5">Projects</p>
+                        </div>
+                        <div class="col bg-light col-5">
+                            <h3 class="display-4 font-monospace text-danger">{% total_comments %}+</h3>
+                            <p class="font-monospace fs-5">Comments</p>
+                        </div>
+
+                    </div>
+                </div>
             </div>
             <div class="col-md-5 text-center d-none d-md-block">
                 <!-- tooltip -->
@@ -138,11 +152,7 @@
             </div>
         </div>
     </div>
-    <div class="container py-3">
-        <div class="text-center">
-            <h2 class="display-5 font-monospace text-secondary">Skill</h2>
-        </div>
-    </div>
+
     <div class="container">
         <div class="row my-5 g-3 justify-content-around align-items-center">
             <div class="col-lg-6">
@@ -168,11 +178,6 @@
         </div>
     </div>
     <div class="container">
-        <div class="container py-3">
-            <div class="text-center">
-                <h2 class="display-4 text-monospace text-secondary">Team Player</h2>
-            </div>
-        </div>
         <div class="row my-5 g-3 justify-content-around align-items-center">
             <div class="col-lg-5">
                 <img class="img-fluid rounded float-start" src="{% static 'images/social.png' %}" alt="White board">
