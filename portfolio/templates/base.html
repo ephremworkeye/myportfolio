@@ -20,9 +20,9 @@
 <body>
 
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow p-3 bg-body rounded">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-danger shadow p-3">
         <div class="container-fluid">
-            <a href="{% url 'portfolio:portfolio_list' %}" class="navbar-brand text-danger">
+            <a href="{% url 'portfolio:portfolio_list' %}" class="navbar-brand">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                     class="bi bi-building" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -52,14 +52,14 @@
                     </li>
                     <li class="nav-item">
                         <a href="{% url 'contact:contact' %}"
-                            class="btn btn-outline-danger opacity-100 p-2 fs-5">Contact</a>
+                            class="btn btn-outline-light opacity-100 p-2 fs-5">Contact</a>
                     </li>
 
                 </ul>
                 <form action="{% url 'portfolio:search' %}" class="d-flex col-lg-6" method="get">
-                    <input class="form-control me-2 fs-5" type="search" placeholder="Search Portfolio"
+                    <input class="form-control me-2 fs-5 p-2" type="search" placeholder="Search Portfolio"
                         aria-label="Search" name="query">
-                    <button class="btn btn-outline-danger fs-5" type="submit">Search</button>
+                    <button class="btn btn-outline-success fs-5 p-2" type="submit">Search</button>
                 </form>
 
             </div>
@@ -72,7 +72,8 @@
     {% endblock %}
 
     <!-- footer -->
-    <footer class="bg-dark opacity-100 py-5">
+    <footer class="">
+        <img src="{% static 'images/wave2.png' %}" class="bottom-img" alt="">
         <div class="container-fluid py-5">
             <div class="row text-center">
                 <div class="col">
@@ -92,7 +93,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <a href="#" class="nav-link text-danger opacity-100 text-end">
+                    <a href="#" class="nav-link text-light opacity-100 text-end">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-linkedin" viewBox="0 0 16 16">
                             <path
@@ -102,7 +103,7 @@
                 </div>
 
                 <div class="col text-start">
-                    <a href="#" class="nav-link text-danger opacity-100">
+                    <a href="#" class="nav-link text-light opacity-100">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-github" viewBox="0 0 16 16">
                             <path
@@ -112,7 +113,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col text-center bg-dark text-light">
+                <div class="col text-center text-light">
                     © 2021 Copyright: <a class="text-light ps-2" href="#">ephrempro.com</a>
 
                 </div>

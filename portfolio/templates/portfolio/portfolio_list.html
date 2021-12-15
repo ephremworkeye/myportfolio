@@ -7,59 +7,47 @@
 
 {% block content %}
 
+
 <!-- main image & intro text -->
 
 <section id="intro">
     <div class="container py-5">
         <div class="row justify-content-center align-items-center">
-
             <div class="col-md-7 text-center text-md-start my-5 py-5">
                 <h1>
-                    <div class="display-4 fw-bolder font-monospace text-danger opacity-100">
+                    <div class="display-4 fw-bolder font-monospace text-white opacity-100">
                         <span class="auto-input"></span>
                     </div>
                 </h1>
-                <p class="lead my-4 text-muted"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+                <p class="lead my-4 text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
                     inventore nulla porro, sunt explicabo minus et! Repellendus tempora voluptates nulla?
                 </p>
-                <a href="{% url 'contact:contact' %}" class="btn btn-danger btn-lg opacity-100 me-3">Contace me</a>
+                <a href="{% url 'contact:contact' %}" class="btn btn-success btn-lg opacity-100 me-3">Contace me</a>
                 {% for profile in profiles %}
                 <a href="{{ profile.resume.url }}" download="{{ profile.resume.url }}"
-                    class="btn btn-outline-danger btn-lg opacity-100 me-3">Download
-                    Resume</a>
+                    class="btn btn-primary btn-lg opacity-100 me-3">
+                    Download Resume
+                </a>
                 {% endfor %}
-                <div class="container">
-                    <div class="row text-center mt-4 rounded">
-                        <div class="col bg-light col-5 me-5">
-                            <h3 class="display-4 font-monospace text-danger">{% total_portfolios %}+</h3>
-                            <p class="font-monospace fs-5">Projects</p>
-                        </div>
-                        <div class="col bg-light col-5">
-                            <h3 class="display-4 font-monospace text-danger">{% total_comments %}+</h3>
-                            <p class="font-monospace fs-5">Comments</p>
-                        </div>
 
-                    </div>
-                </div>
             </div>
             <div class="col-md-5 text-center d-none d-md-block">
                 <!-- tooltip -->
                 <span class="tt" data-bs-placement="bottom" title="Profile Picture">
-                    <img class="img-fluid rounded" src="{% static 'images/portfolio.jpg' %}" alt="profile picture">
+                    <img class="img-fluid rounded" src="{% static 'images/about2.png' %}" alt="profile picture">
                 </span>
 
-                <div class="py-3">
-                    <a href="#sidebar" class="btn btn-outline-secondary btn-lg" data-bs-toggle="offcanvas" role="button"
+                <!-- open sidebar / off canvas -->
+                <div class="py-3 my-3">
+                    <a href="#sidebar" class="btn btn-dark btn-lg" data-bs-toggle="offcanvas" role="button"
                         aria-controls="sidebar">
                         Explore my Skill
                     </a>
                 </div>
-                <!-- open sidebar / off canvas -->
-
             </div>
-
         </div>
     </div>
+    <img src="{% static 'images/wave1.png' %}" class="bottom-img" alt="">
 </section>
 
 <!-- end main image -->
@@ -67,10 +55,10 @@
 
 <!-- portfolio list -->
 
-<section id="portfolio" class="bg-light py-5">
+<section id="portfolio" class="py-5">
     <div class="container py-3">
         <div class="text-center">
-            <h2 class="display-4 font-monospace text-secondary">Portfolio List</h2>
+            <h2 class="display-4 font-monospace text-dark">Portfolio List</h2>
         </div>
     </div>
     <div class="container">
@@ -82,7 +70,7 @@
                             alt="{{ portfolio.name }}"></a>
                 </div>
                 <div class="card-body text-center">
-                    <a href="{{ portfolio.get_absolute_url }}" class="nav-link text-secondary">
+                    <a href="{{ portfolio.get_absolute_url }}" class="nav-link text-dark">
                         <p class="card-title fs-4 font-monospace">{{ portfolio.name }}</p>
                     </a>
                     <div class="py-2">
@@ -124,26 +112,69 @@
         </div>
         {% include "pagination.html" with page=portfolios %}
     </div>
+
+
+
+
 </section>
 
 <!-- end portfolio list -->
 
+<!-- summary -->
+
+<section id="summary" class="bg-light py-5 shadow-lg">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="display-5 font-monospace text-dark">Summary</h2>
+        </div>
+    </div>
+    <div class="container m-auto">
+        <div class="row text-center">
+            <div class="col-6 py-5">
+                <div class="text-dark p-3 mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="70" fill="currentColor"
+                        class="bi bi-kanban-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2h-11zm5 2h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm-5 1a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3zm9-1h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z" />
+                    </svg>
+                </div>
+                <h3 class="display-4 font-monospace text-danger">{% total_portfolios %}+</h3>
+                <p class="font-monospace fs-5 text-danger">Projects</p>
+            </div>
+            <div class="col-6 py-5">
+                <div class="text-dark p-3 mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="70" fill="currentColor"
+                        class="bi bi-chat-square-dots-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2V2zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                    </svg>
+                </div>
+                <h3 class="display-4 font-monospace text-danger">{% total_comments %}+</h3>
+                <p class="font-monospace fs-5 text-danger">Comments</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- end summary -->
+
+
+
 <!-- about -->
 
-<section id="about">
+<section id="about" class="mt-5">
     <div class="container py-3">
         <div class="text-center">
-            <h2 class="display-5 font-monospace text-secondary">About</h2>
+            <h2 class="display-5 font-monospace text-dark">About</h2>
         </div>
     </div>
     <div class="container">
-        <div class="row my-5 g-3 justify-content-around align-items-center">
+        <div class="row g-3 justify-content-around align-items-center">
             <div class="col-lg-5">
-                <img class="img-fluid rounded float-start" src="{% static 'images/whiteboard1.jpg' %}"
-                    alt="White board">
+                <img class="img-fluid rounded float-start" src="{% static 'images/vector2.png' %}" alt="">
             </div>
-            <div class="col-lg-6">
-                <p class="text-lead text-secondary fs-5">
+            <div class="col-lg-5">
+                <p class="text-lead text-dark fs-5 align-middle">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil quasi ad nemo accusamus laudantium
                     eligendi aut rem deserunt veniam nulla! Ratione nihil alias eos, maxime laudantium saepe illo
                     repudiandae necessitatibus, eius vel similique delectus dolorum nostrum facilis placeat voluptate
@@ -152,10 +183,20 @@
             </div>
         </div>
     </div>
+</section>
+<!-- end about -->
+
+<!-- skill section -->
+<section id="skill" class="shadow-lg">
 
     <div class="container">
+        <div class="container pt-5">
+            <div class="text-center">
+                <h2 class="display-5 font-monospace text-dark">Skill</h2>
+            </div>
+        </div>
         <div class="row my-5 g-3 justify-content-around align-items-center">
-            <div class="col-lg-6">
+            <div class="col-lg-5">
                 {% for skill in skills %}
                 {% with value=skill.rate %}
                 <div class="font-monospace">
@@ -168,21 +209,30 @@
                         role="progressbar" style="width: {{ value }}%;" aria-valuenow="100" aria-valuemin="0"
                         aria-valuemax="100">{{ value }}%</div>
                 </div>
-
                 {% endwith %}
                 {% endfor%}
             </div>
             <div class="col-lg-5">
-                <img class="img-fluid rounded float-start" src="{% static 'images/skill-red.jpg' %}" alt="White board">
+                <img class="img-fluid rounded float-start" src="{% static 'images/vector3.png' %}" alt="White board">
             </div>
         </div>
     </div>
+</section>
+<!-- end skill -->
+
+<!-- team-work -->
+<section id="team-work">
+    <div class="container pt-3">
+        <div class="text-center">
+            <h2 class="display-5 font-monospace text-dark">Team Work</h2>
+        </div>
+    </div>
     <div class="container">
-        <div class="row my-5 g-3 justify-content-around align-items-center">
+        <div class="row my- g-3 justify-content-around align-items-center">
             <div class="col-lg-5">
-                <img class="img-fluid rounded float-start" src="{% static 'images/social.png' %}" alt="White board">
+                <img class="img-fluid rounded float-start" src="{% static 'images/home2.png' %}" alt="White board">
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-5">
                 <p class="lead">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia reiciendis id dolorem fuga
                     eligendi, corporis accusantium dolorum laboriosam ducimus ipsa. Optio corporis corrupti nihil
@@ -193,7 +243,8 @@
         </div>
     </div>
 </section>
-<!-- end about -->
+<!-- end team-work -->
+
 
 <!-- testimonial -->
 
@@ -210,7 +261,8 @@
         <div class="carousel-inner">
             {% for testimonial in testimonials %}
             <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
-                <img src="{% static 'images/background3.png' %}" class="d-block w-100" alt="..." style="height: 400px;">
+                <img src="{% static 'images/background3.png' %}" class="d-block w-100" alt="..." style="height: 400px;"
+                    id="testimonial-img">
                 <div class="carousel-caption">
 
                     <h4 class="py-3">{{ testimonial.user.username }}</h4>
@@ -245,18 +297,21 @@
 
 
 <!-- contact -->
-<div class="container-fluid bg-light py-5 font-monospace">
-    <div class="text-center">
-        <h2 class="display-4 font-monospace text-secondary">Contact</h2>
+<section id="contact">
+
+    <div class="container-fluid bg-light py-5 font-monospace">
+        <div class="text-center">
+            <h2 class="display-4 font-monospace text-dark">Contact</h2>
+        </div>
+        <div class="container mt-5 col-lg-7">
+            <form action="{% url 'contact:contact' %}" method="post" class="form-control-lg">
+                {{ form|crispy }}
+                {% csrf_token %}
+                <input type="submit" role="button" value="Contact" class="btn btn-lg btn-danger opacity-100">
+            </form>
+        </div>
     </div>
-    <div class="container mt-5 col-lg-7">
-        <form action="{% url 'contact:contact' %}" method="post" class="form-control-lg">
-            {{ form|crispy }}
-            {% csrf_token %}
-            <input type="submit" role="button" value="Contact" class="btn btn-lg btn-danger opacity-100">
-        </form>
-    </div>
-</div>
+</section>
 <!-- end contact -->
 
 

@@ -2,6 +2,24 @@
     background-color: rgba(238, 238, 232, 0.959)
 } */
 
+.navbar {
+    background-image: linear-gradient(to right, rgb(246, 8, 8), rgb(117, 4, 4));
+
+}
+
+#intro{
+    background-image: linear-gradient(to right, rgb(246, 8, 8), rgb(117, 4, 4));
+    padding-top: 5%;
+    color: white;
+}
+
+.bottom-img {
+    width: 100%;
+}
+
+
+
+
 .inner {
     overflow: hidden;
 }
@@ -20,7 +38,16 @@
     box-shadow: 0 10px 10px #817d7d;
 }
 
-img:hover {
+/* img:hover {
     transform: scale(1.05);
+    opacity: 0.5;
+    border-color: rgb(34, 102, 3);
+    border-style: solid;
+    border-width: 0 0 10px 0;
 
+
+} */
+
+footer{
+    background-image: linear-gradient(to right, rgb(246, 8, 8), rgb(117, 4, 4));
 }
