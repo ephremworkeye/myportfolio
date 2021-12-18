@@ -4,14 +4,15 @@
 {% block title %} detail {% endblock %}
 
 {% block content %}
-<div class="text-center mt-5">
+
+<div class="text-center mt-5" id="detail-space">
     <h2 class="display-4 font-monospace text-dark">{{ portfolio.name }}</h2>
 </div>
 <div class="container py-5">
     <div class="container">
-        <div class="row justify-content-center align-items-center">
+        <div class="row justify-content-center">
 
-            <div class="col-md-8 text-center d-md-block">
+            <div class="col-md-6 text-center d-md-block">
                 <!-- tooltip -->
                 <span class="tt" data-bs-placement="bottom" title="{{ portfolio.name }}">
                     <img class="img-fluid" src="{{ portfolio.image.url }}" alt="portfolio.name">
@@ -38,49 +39,96 @@
                         </li>
                     </ul>
                 </div>
-            </div>
 
-            <div class="col-md-4 text-center text-md-start text-monospace">
-                <p class="mt-2 fs-5">Technoloy Used:</p>
-                <ul class="list-group list-group-flush">
-                    {% for skill in portfolio.skill.all %}
-                    <li class="list-group-item">{{ skill.name }}</li>
-                    {% empty %}
-                    <li class="list-group-item">Technology not listed</li>
-                    {% endfor %}
-                </ul>
-                <p class="mt-2 fs-5">Library Used:</p>
-                <ul class="list-group list-group-flush">
-                    {% for library in portfolio.library.all %}
-                    <li class="list-group-item">{{ library.name }}</li>
-                    {% empty %}
-                    <li class="list-group-item">Technology not listed</li>
-                    {% endfor %}
-                </ul>
+                <div class="my-3">
+                    <p class="lead font-monospace"> Do you wanna see a model?
+                        <a href="{{ portfolio.model_design_url }}" class="text-dark">Click here</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 font-monospace fs-5">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header fs-4" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Technology Used
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush">
+                                    {% for skill in portfolio.skill.all %}
+                                    <li class="list-group-item">{{ skill.name }}</li>
+                                    {% empty %}
+                                    <li class="list-group-item">Technology not listed</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Library Used
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush">
+                                    {% for library in portfolio.library.all %}
+                                    <li class="list-group-item">{{ library.name }}</li>
+                                    {% empty %}
+                                    <li class="list-group-item">No Library Listed</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Description
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                {{ portfolio.description }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
-        <div class="col-lg-7">
-
-
+        <div class="col-lg-6 font-monospace my-4">
             {% with comments.count as total_comments %}
-            <h3 class="my-3 ps-2">{{ total_comments }} comment {{ total_comments|pluralize }}</h3>
+            <h3 class="my-3 ps-2">{{ total_comments }}
+                comment{{ total_comments|pluralize }}</h3>
             {% endwith %}
             <div class="">
                 {% if new_comment %}
-                <h2 class="ps-2">Your comment has been added.</h2>
-                {% else %}
-                <h2 class="ps-2">Add a new comment</h2>
-                <form method="post" class="bg-light p-2">
-                    {{ comment_form|crispy }}
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-lg btn-danger mb-2 ps-2">Add Comment</button>
-                </form>
-                {% endif %}
+                <h3 class="ps-2 text-success">Your comment has been added.</h>
+                    {% else %}
+                    <h3 class="ps-2">Add a new comment</h3>
+                    <form method="post" class="p-2 shadow-lg">
+                        {{ comment_form|crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-lg btn-danger mb-2 ps-2">Add Comment</button>
+                    </form>
+                    {% endif %}
             </div>
             {% for comment in comments %}
             <div class="row my-2">
                 <div class="col-2 pe-2">
-                    <div class="ms-2 text-danger">
+                    <div class="ms-2 text-dark">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                             class="bi bi-person-bounding-box" viewBox="0 0 16 16">
                             <path
@@ -106,19 +154,5 @@
 
 </div>
 
-<div class="container my-3">
-    <div class="card text-center">
-        <div class="card-header">
-            Wanna see more?
-        </div>
-        <div class="card-body">
-            <p class="card-text">{{ portfolio.description }}</p>
-            <a href="{{ portfolio.model_design_url }}" class="btn btn-danger">Database Schema</a>
-        </div>
-    </div>
-</div>
-
-</div>
-</div>
 
 {% endblock %}
