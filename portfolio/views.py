@@ -63,5 +63,8 @@ def portfolio_detail(request, id, slug):
 def portfolio_search(request):
     query = request.GET.get('query', '')
     results = Portfolio.objects.annotate(
-        search=SearchVector('title', 'body'),).filter(search=query)
-    return render(request, 'portfolio/search.html', {'query': query, 'results': results})
+        search=SearchVector('name', 'description'),).filter(search=query)
+    if query:
+        return render(request, 'portfolio/search.html', {'query': query, 'results': results})
+    else:
+        return render(request, 'portfolio/portfolio_list.html')
