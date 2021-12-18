@@ -1,6 +1,6 @@
-/* body {
-    background-color: rgba(238, 238, 232, 0.959)
-} */
+body {
+    background-color: white;
+}
 
 .navbar {
     background-image: linear-gradient(to right, rgb(246, 8, 8), rgb(117, 4, 4));
@@ -19,6 +19,10 @@
 
 
 
+.btn:hover {
+transform: scale(1.15);
+margin: 0 5px;
+}
 
 .inner {
     overflow: hidden;
@@ -31,22 +35,32 @@
     transform: scale(1.5);
 }
 
+
+
 .card{
     border: none;
 }
-.card:hover{
-    box-shadow: 0 10px 10px #817d7d;
+
+
+#search-space{
+    margin: 200px !important;
 }
 
-/* img:hover {
-    transform: scale(1.05);
-    opacity: 0.5;
-    border-color: rgb(34, 102, 3);
-    border-style: solid;
-    border-width: 0 0 10px 0;
+#detail-space{
+    margin-top: 100px !important;
+}
 
 
-} */
+#summary {
+    background-image: linear-gradient(to right, rgb(246, 8, 8), rgb(117, 4, 4));
+    padding-top: 5%;
+    color: white;    
+}
+
+.accordion-button {
+    font-size: 1.3rem;
+}
+
 
 footer{
     background-image: linear-gradient(to right, rgb(246, 8, 8), rgb(117, 4, 4));
