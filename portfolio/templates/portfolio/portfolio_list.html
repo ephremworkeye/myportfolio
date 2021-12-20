@@ -40,10 +40,10 @@
 
                 <!-- open sidebar / off canvas -->
                 <div class="my-3 text-start">
-                    <a href="#sidebar" class="btn btn-dark btn-lg" data-bs-toggle="offcanvas" role="button"
-                        aria-controls="sidebar" style="margin-left:110px">
-                        Explore my Skill
-                    </a>
+                    <button class="btn btn-dark btn-lg" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Explore my
+                        skill</button>
+
                 </div>
             </div>
         </div>
@@ -313,10 +313,11 @@
 
 
 <!-- offcanvas -->
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+    aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="sidebar-label">My Skill</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="close"></button>
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Skills</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
         <ul class="list-group list-group-flush">
@@ -328,7 +329,7 @@
 
         </ul>
         <hr>
-        <h5>Technologies used</h5>
+        <h5>Technologies</h5>
         <ul class="list-group list-group-flush">
             {% for technology in technologies %}
             <li class="list-group-item">{{ technology.name }}</li>
@@ -339,5 +340,7 @@
         </ul>
     </div>
 </div>
+
+
 
 {% endblock %}
