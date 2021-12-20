@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.postgres.search import SearchVector
 from .models import Portfolio
-from skill.models import Skill
+from skill.models import Skill, Library
 from account.models import Profile
 from testimonial.models import Testimonial
 from contact.forms import ContactForm
@@ -29,13 +29,15 @@ def portfolio_list(request):
     testimonials = Testimonial.objects.filter(is_active=True)[:3]
     profiles = Profile.objects.filter(user=request.user.is_superuser)
     form = ContactForm()
+    technologies = Library.objects.all()
     return render(request, 'portfolio/portfolio_list.html', {
         'portfolios': portfolios,
         'skills': skills,
         'testimonials': testimonials,
         'form': form,
         'range': range(5),
-        'profiles': profiles
+        'profiles': profiles,
+        'technologies': technologies,
     })
 
 

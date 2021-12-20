@@ -327,6 +327,16 @@
             {% endfor %}
 
         </ul>
+        <hr>
+        <h5>Technologies used</h5>
+        <ul class="list-group list-group-flush">
+            {% for technology in technologies %}
+            <li class="list-group-item">{{ technology.name }}</li>
+            {% empty %}
+            <li class="list-group-item">Technology not listed</li>
+            {% endfor %}
+
+        </ul>
     </div>
 </div>
 
