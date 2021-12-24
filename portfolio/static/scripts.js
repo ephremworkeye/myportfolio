@@ -26,3 +26,11 @@ tooltips.forEach(t => {
     new bootstrap.Tooltip(t)
 })
 
+
+// get the current year
+
+function getCurrentYear() {
+    const d = new Date()
+    document.getElementById('current_year').innerText += d.getFullYear() + " ephrempro: All rights reserved"
+
+}
