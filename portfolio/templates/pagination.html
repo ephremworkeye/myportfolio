@@ -4,31 +4,31 @@
         <ul class="pagination justify-content-center">
             {% if page.has_previous %}
             <li class="page-item">
-                <a class="page-link text-danger" href="?page={{ page.previous_page_number }}"><span>Previous</span></a>
+                <a class="page-link" href="?page={{ page.previous_page_number }}"><span>Previous</span></a>
             </li>
             {% else %}
             <li class="page-item disabled">
-                <a href="#" class="page-link text-danger"><span>Previous</span></a>
+                <a href="#" class="page-link"><span>Previous</span></a>
             </li>
             {% endif %}
             {% for i in page.paginator.page_range %}
             {% if page.number == i %}
             <li class="page-item active" aria-current="page">
-                <a href="#" class="page-link text-danger bg-light border-danger"><span>{{ i }}</span></a>
+                <a href="#" class="page-link"><span>{{ i }}</span></a>
             </li>
             {% else %}
             <li class="page-item" aria-current="page">
-                <a class="page-link text-danger bg-light" href="?page={{ i }}"><span>{{ i }}</span></a>
+                <a class="page-link" href="?page={{ i }}"><span>{{ i }}</span></a>
             </li>
             {% endif %}
             {% endfor %}
             {% if page.has_next %}
             <li class="page-item">
-                <a class="page-link text-danger" href="?page={{ page.next_page_number }}"><span>Next</span></a>
+                <a class="page-link" href="?page={{ page.next_page_number }}"><span>Next</span></a>
             </li>
             {% else %}
             <li class="page-item disabled">
-                <a href="#" class="page-link text-danger"><span>Next</span></a>
+                <a href="#" class="page-link"><span>Next</span></a>
             </li>
             {% endif %}
         </ul>

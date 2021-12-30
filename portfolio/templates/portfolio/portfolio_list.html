@@ -15,17 +15,17 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-md-7 text-center text-md-start my-5 py-5">
                 <h1>
-                    <div class="display-4 fw-bolder font-monospace text-white opacity-100">
+                    <div class="display-4 fw-bolder font-monospace">
                         <span class="auto-input"></span>
                     </div>
                 </h1>
-                <p class="lead my-4 text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+                <p class="lead my-4 intro-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
                     inventore nulla porro, sunt explicabo minus et! Repellendus tempora voluptates nulla?
                 </p>
-                <a href="{% url 'contact:contact' %}" class="btn btn-success btn-lg opacity-100 me-3">Contace me</a>
+                <a href="{% url 'contact:contact' %}" class="btn btn-lg me-3 contact-btn my-3">Contace me</a>
                 {% for profile in profiles %}
                 <a href="{{ profile.resume.url }}" download="{{ profile.resume.url }}"
-                    class="btn btn-outline-light btn-lg opacity-100 me-3 my-2">
+                    class="btn  btn-lg  me-3 my-3 download-btn">
                     Download Resume
                 </a>
                 {% endfor %}
@@ -35,12 +35,12 @@
                 <!-- tooltip -->
                 <span class="tt" data-bs-placement="bottom" title="Ephrem's Picture">
                     <img class="img-fluid rounded" src="{% static 'images/profile_pic.png' %}" alt="profile picture"
-                        style="width: 250px;">
+                        style="width: 320px;">
                 </span>
 
                 <!-- open sidebar / off canvas -->
                 <div class="my-3 me-5">
-                    <button class="btn btn-dark btn-lg" type="button" data-bs-toggle="offcanvas"
+                    <button class="btn btn-lg explore-btn" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Explore my
                         skill</button>
 
@@ -58,7 +58,7 @@
 <section id="portfolio" class="py-5">
     <div class="container py-3">
         <div class="text-center">
-            <h2 class="display-4 font-monospace text-dark">Portfolio List</h2>
+            <h2 class="display-4 font-monospace ">Portfolio List</h2>
         </div>
     </div>
     <div class="container py-3">
@@ -70,13 +70,13 @@
                             alt="{{ portfolio.name }}"></a>
                 </div>
                 <div class="card-body text-center">
-                    <a href="{{ portfolio.get_absolute_url }}" class="nav-link text-dark">
+                    <a href="{{ portfolio.get_absolute_url }}" class="nav-link">
                         <p class="card-title fs-4 font-monospace">{{ portfolio.name }}</p>
                     </a>
                     <div class="py-2">
                         <ul class="list-inline text-center">
                             <li class="list-inline-item">
-                                <a href="{{ portfolio.github_url }}" class="text-danger opacity-100">
+                                <a href="{{ portfolio.github_url }}" class="nav-link">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                         class="bi bi-github" viewBox="0 0 16 16">
                                         <path
@@ -85,7 +85,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item px-4">
-                                <a href="{{ portfolio.website_url }}" class="text-danger opacity-100">
+                                <a href="{{ portfolio.website_url }}" class="nav-link">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                         class="bi bi-globe" viewBox="0 0 16 16">
                                         <path
@@ -94,7 +94,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="{{ portfolio.get_absolute_url }}" class="text-danger opacity-100">
+                                <a href="{{ portfolio.get_absolute_url }}" class="nav-link">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                         class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                                         <path
@@ -162,16 +162,16 @@
 <section id="about" class="mt-5">
     <div class="container py-3">
         <div class="text-center">
-            <h2 class="display-5 font-monospace text-dark">About</h2>
+            <h2 class="display-5 font-monospace ">About</h2>
         </div>
     </div>
     <div class="container">
         <div class="row g-3 justify-content-around align-items-center">
             <div class="col-lg-5">
-                <img class="img-fluid rounded float-start" src="{% static 'images/vector2.png' %}" alt="">
+                <img class="img-fluid rounded float-start" src="{% static 'images/about2.png' %}" alt="">
             </div>
             <div class="col-lg-5">
-                <p class="text-lead text-dark fs-5 align-middle">
+                <p class="text-lead  fs-5 align-middle">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil quasi ad nemo accusamus laudantium
                     eligendi aut rem deserunt veniam nulla! Ratione nihil alias eos, maxime laudantium saepe illo
                     repudiandae necessitatibus, eius vel similique delectus dolorum nostrum facilis placeat voluptate
@@ -189,7 +189,7 @@
     <div class="container">
         <div class="container pt-5">
             <div class="text-center">
-                <h2 class="display-5 font-monospace text-dark">Skill</h2>
+                <h2 class="display-5 font-monospace ">Skill</h2>
             </div>
         </div>
         <div class="row my-5 g-3 justify-content-around align-items-center">
@@ -202,15 +202,15 @@
 
                 <div class="progress my-2">
 
-                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger opacity-100"
-                        role="progressbar" style="width: {{ value }}%;" aria-valuenow="100" aria-valuemin="0"
-                        aria-valuemax="100">{{ value }}%</div>
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                        style="width: {{ value }}%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        {{ value }}%</div>
                 </div>
                 {% endwith %}
                 {% endfor%}
             </div>
             <div class="col-lg-5">
-                <img class="img-fluid rounded float-start" src="{% static 'images/vector3.png' %}" alt="White board">
+                <img class="img-fluid rounded float-start" src="{% static 'images/skill2.png' %}" alt="">
             </div>
         </div>
     </div>
@@ -221,13 +221,13 @@
 <section id="team-work">
     <div class="container pt-3">
         <div class="text-center">
-            <h2 class="display-5 font-monospace text-dark">Team Work</h2>
+            <h2 class="display-5 font-monospace ">Team Work</h2>
         </div>
     </div>
     <div class="container">
         <div class="row my- g-3 justify-content-around align-items-center">
             <div class="col-lg-5">
-                <img class="img-fluid rounded float-start" src="{% static 'images/home2.png' %}" alt="White board">
+                <img class="img-fluid rounded float-start" src="{% static 'images/team-work.jpeg' %}" alt="">
             </div>
             <div class="col-lg-5">
                 <p class="lead">
@@ -258,13 +258,13 @@
         <div class="carousel-inner">
             {% for testimonial in testimonials %}
             <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
-                <img src="{% static 'images/background3.png' %}" class="d-block w-100" alt="..." style="height: 400px;"
+                <img src="{% static 'images/background2.jpg' %}" class="d-block w-100" alt="..." style="height: 500px;"
                     id="testimonial-img">
                 <div class="carousel-caption">
 
                     <h4 class="py-3">{{ testimonial.user.username }}</h4>
                     <p class="pb-1">{{ testimonial.quote}}</p>
-                    <p class="pb-5" style="color: yellow;">
+                    <p class="pb-5 review-rate">
                         {% for _ in range %}
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -297,13 +297,13 @@
 <section id="contact">
     <div class="container py-5 font-monospace">
         <div class="text-center">
-            <h2 class="display-4 font-monospace text-dark">Contact</h2>
+            <h2 class="display-4 font-monospace ">Contact</h2>
         </div>
         <div class="container mt-5 col-lg-7">
             <form action="{% url 'contact:contact' %}" method="post" class="form-control-lg shadow-lg">
                 {{ form|crispy }}
                 {% csrf_token %}
-                <input type="submit" role="button" value="Contact" class="btn btn-lg btn-danger opacity-100">
+                <input type="submit" role="button" value="Contact" class="btn btn-lg contact-btn">
             </form>
         </div>
     </div>
@@ -338,7 +338,5 @@
         </ul>
     </div>
 </div>
-
-
 
 {% endblock %}

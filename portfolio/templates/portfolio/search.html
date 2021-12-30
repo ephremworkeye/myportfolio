@@ -18,14 +18,14 @@
 
         {% for portfolio in results %}
         <div class="col-lg-8 mb-5">
-            <h4><a class="text-dark" href="{{ portfolio.get_absolute_url }}">{{ portfolio.name }}</a>
+            <h4><a class="" href="{{ portfolio.get_absolute_url }}">{{ portfolio.name }}</a>
             </h4>
             <p class="lead fs-5 pb-5">{{ portfolio.description }}</p>
         </div>
     </div>
 
     {% empty %}
-    <div class="container my-5 text-center text-dark">
+    <div class="container my-5 text-center ">
         <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-search"
             viewBox="0 0 16 16">
             <path

@@ -7,10 +7,10 @@
 <!-- contact -->
 <div class="container mt-5 py-5 font-monospace">
     <div class="text-center">
-        <h2 class="display-4 font-monospace text-dark py-5">Contact</h2>
+        <h2 class="display-4 font-monospace  py-5">Contact</h2>
     </div>
     {% if sent %}
-    <div class="container bg-success text-white m-auto col-lg-6 mb-5 rounded p-1">
+    <div class="container m-auto col-lg-6 mb-5 rounded p-1">
         <p class="lead text-center fs-5 vertical-align pt-1">Your message was submitted successfully</p>
     </div>
     {% else %}
@@ -19,7 +19,7 @@
         <form method="post" class="form-control-lg shadow-lg">
             {{ form|crispy }}
             {% csrf_token %}
-            <input type="submit" role="button" value="Contact" class="btn btn-lg btn-danger mb-2">
+            <input type="submit" role="button" value="Contact" class="btn btn-lg  mb-2 contact-btn">
         </form>
     </div>
     {% endif %}

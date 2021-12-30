@@ -1,28 +1,126 @@
-body {
+/* body {
     background-color: rgba(255, 255, 255, 0.897) !important;
+} */
+
+:root {
+    --primary-color: #25274d;
+    --secondary-color: #f6e9e9;
+    --third-color: #2e9cca;
+    --fourth-color: #aaabbb;
+    --fifth-color: #29648a;
+    --six-color: #FF87CA;
+    --seven-color: #FFC4E1;
 }
 
 .navbar {
-    background-image: linear-gradient(to right, rgb(246, 8, 8), rgb(117, 4, 4));
+    /* background-image: linear-gradient(to right, rgb(246, 8, 8), rgb(117, 4, 4)); */
+    background-color: var(--primary-color);
 
 }
+.navbar .navbar-brand {
+    color: var(--secondary-color);
+}
+.navbar .nav-link {
+    color: var(--third-color);
+    margin-right: 20px;
+}
+
+
+
+.navbar .nav-link:hover {
+    border-bottom: 3px solid var(--secondary-color);
+    color: var(--secondary-color) !important;
+}
+
+.active, .navbar .nav-link:hover {
+    border-bottom: 3px solid var(--secondary-color);
+    color: var(--secondary-color) !important;
+}
+
+
+.navbar .btn {
+    background-color: var(--third-color);
+    color: var(--secondary-color);
+}
+
+.navbar .btn:hover {
+    background-color: var(--fifth-color);
+    color: var(--fourth-color);
+    transform: scale(1.15);
+    margin: 0 5px;
+
+}
+
+
 
 #intro{
-    background-image: linear-gradient(to right, rgb(246, 8, 8), rgb(117, 4, 4));
-    padding-top: 7%;
-    color: white;
+    /* background-image: linear-gradient(to right, rgb(246, 8, 8), rgb(117, 4, 4)); */
+    background-color: var(--primary-color);
+    padding-top: 5%;
+    /* color: white; */
+
 }
+
+.auto-input {
+    color: var(--third-color);
+}
+
+.intro-text {
+    color: var(--secondary-color);
+}
+
+
+.contact-btn {
+    background-color: var(--third-color);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+}
+
+.contact-btn:hover {
+    background-color: var(--fifth-color);
+    color: var(--fourth-color);
+    transform: scale(1.15);
+}
+
+.download-btn {
+    border-style: solid;
+    border-color: var(--third-color);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+}
+
+.download-btn:hover {
+    background-color: var(--fifth-color);
+    color: var(--fourth-color);
+    transform: scale(1.15);
+}
+
+.explore-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+}
+
+.explore-btn:hover {
+    background-color: var(--third-color);
+    color: var(--secondary-color);
+    transform: scale(1.15);
+}
+
+
+.card .nav-link {
+    color: var(--third-color);
+}
+
+.card .nav-link:hover {
+    color: var(--fifth-color);
+}
+
 
 .bottom-img {
     width: 100%;
 }
 
-
-
-.btn:hover {
-transform: scale(1.15);
-margin: 0 5px;
-}
 
 .inner {
     overflow: hidden;
@@ -35,12 +133,26 @@ margin: 0 5px;
     transform: scale(1.5);
 }
 
-
-
 .card{
     border: none;
 }
 
+#summary {
+    background-color: var(--third-color);
+    padding-top: 5%;
+    color: var(--secondary-color);    
+}
+
+
+#skill .progress-bar{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+
+.review-rate {
+    color:gold;
+}
 
 #search-space{
     margin: 200px !important;
@@ -51,17 +163,51 @@ margin: 0 5px;
 }
 
 
-#summary {
-    background-image: linear-gradient(to right, rgb(246, 8, 8), rgb(117, 4, 4));
-    padding-top: 5%;
-    color: white;    
-}
+
 
 .accordion-button {
     font-size: 1.3rem;
 }
 
+.detail .nav-link {
+    color: var(--third-color);
+
+}
+
+.detail .nav-link:hover {
+    color: var(--fifth-color);
+}
+
+.detail .btn {
+    background-color: var(--third-color);
+    color: var(--secondary-color);
+}
+
+.detail .btn:hover {
+    background-color: var(--fifth-color);
+    color: var(--fourth-color);
+    transform: scale(1.15);
+    margin: 0 5px;
+}
 
 footer{
-    background-image: linear-gradient(to right, rgb(246, 8, 8), rgb(117, 4, 4));
+    background-color: var(--primary-color);
+    /* color: var(--secondary-color) !important; */
+}
+
+footer .nav-link {
+    color: var(--third-color);
+}
+
+
+footer .nav-link:hover {
+    color: var(--fifth-color);
+}
+hr {
+    color: var(--secondary-color);
+}
+
+.copy-right {
+    color: var(--fifth-color);
+    text-align: center;
 }

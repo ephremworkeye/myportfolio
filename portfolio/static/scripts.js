@@ -3,8 +3,7 @@
 
 var header = document.getElementById('nav-menu');
 var navLinks = header.getElementsByClassName('nav-link');
-console.log(navLinks)
-// Loop through the buttons and add the active class to the current / clicked button
+// Loop through the buttons and add the active class to the current 
 for (var i = 0; i < navLinks.length; i++) {
     navLinks[i].addEventListener("click", function () {
         var current = document.getElementsByClassName("active");
@@ -28,9 +27,11 @@ tooltips.forEach(t => {
 
 
 // get the current year
+const copyRight = document.querySelector('.copy-right');
 
-function getCurrentYear() {
-    const d = new Date()
-    document.getElementById('current_year').innerText += d.getFullYear() + " ephrempro: All rights reserved"
+const d = new Date();
+const yearPart = d.getFullYear();
 
-}
+copyRight.textContent = `${yearPart} ephrempro: All rights reserved`;
+
+

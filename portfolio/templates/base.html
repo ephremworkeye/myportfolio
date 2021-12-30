@@ -20,7 +20,7 @@
 <body>
 
     <!-- navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-danger shadow p-3">
+    <nav class="navbar fixed-top navbar-expand-lg shadow p-3">
         <div class="container-fluid">
             <a href="{% url 'portfolio:portfolio_list' %}" class="navbar-brand">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -30,10 +30,11 @@
                     <path
                         d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z" />
                 </svg>
-                <span class="fw-bolder font-monospace lh-5 fs-4 pt-5 opacity-100 fs-2">EphremPort</span>
+                <span class="fw-bolder font-monospace lh-5 fs-4 pt-5 fs-2">EphremPort</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
-                aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+                data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse font-monospace fs-5" id="main-nav">
@@ -51,15 +52,14 @@
                         <a href="#review" class="nav-link">Review</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'contact:contact' %}"
-                            class="btn btn-outline-light opacity-100 p-2 fs-5">Contact</a>
+                        <a href="{% url 'contact:contact' %}" class="btn p-2 fs-5">Contact</a>
                     </li>
 
                 </ul>
-                <form action="{% url 'portfolio:search' %}" class="d-flex col-lg-6" method="get">
+                <form action="{% url 'portfolio:search' %}" class="d-flex col-lg-4" method="get">
                     <input class="form-control me-2 fs-5 p-2" type="search" placeholder="Search Portfolio"
                         aria-label="Search" name="query">
-                    <button class="btn btn-outline-success fs-5 p-2" type="submit">Search</button>
+                    <button class="btn fs-5 p-2" type="submit">Search</button>
                 </form>
 
             </div>
@@ -78,23 +78,23 @@
         <div class="container-fluid py-5">
             <div class="row text-center">
                 <div class="col">
-                    <p> <a href="#about" class="nav-link text-light">About</a> </p>
-                    <p> <a href="{% url 'contact:contact' %}" class="nav-link text-light">Contact</a> </p>
+                    <p> <a href="#about" class="nav-link">About</a> </p>
+                    <p> <a href="{% url 'contact:contact' %}" class="nav-link">Contact</a> </p>
 
                 </div>
                 <div class="col">
-                    <p> <a href="#" class="nav-link text-light">Terms</a></p>
-                    <p> <a href="#" class="nav-link text-light">Privacy Policy</a></p>
+                    <p> <a href="#" class="nav-link">Terms</a></p>
+                    <p> <a href="#" class="nav-link">Privacy Policy</a></p>
 
                 </div>
                 <div class="col">
-                    <p> <a href="#review" class="nav-link text-light">Review</a> </p>
-                    <p> <a href="{% url 'portfolio:portfolio_list' %}" class="nav-link text-light">Portfolio</a></p>
+                    <p> <a href="#review" class="nav-link">Review</a> </p>
+                    <p> <a href="{% url 'portfolio:portfolio_list' %}" class="nav-link">Portfolio</a></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <a href="#" class="nav-link text-light opacity-100 text-end">
+                    <a href="#" class="text-end nav-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-linkedin" viewBox="0 0 16 16">
                             <path
@@ -104,7 +104,7 @@
                 </div>
 
                 <div class="col text-start">
-                    <a href="#" class="nav-link text-light opacity-100">
+                    <a href="#" class="nav-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-github" viewBox="0 0 16 16">
                             <path
@@ -113,16 +113,10 @@
                     </a>
                 </div>
             </div>
-            <hr class="bg-light my-5">
-            <div class="row">
-                <div class="col text-center text-light">
-                    <p id="current_year">
+            <hr class="my-5">
+            <p class="copy-right">
 
-                    </p> © 2021 ephrempro: All rights reserved
-
-                </div>
-
-            </div>
+            </p>
         </div>
 
     </footer>
