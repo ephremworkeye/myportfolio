@@ -1,4 +1,17 @@
 // alert('hello world');
+// const body = document.querySelector('body');
+// const bottomImages = document.querySelectorAll('');
+
+
+// bottomImages.forEach(bottomImage => {
+//     if (body.style.backgroundColor !== 'white') {
+//         bottomImage.setAttribute('style', 'display: none;')
+//     } else {
+//         bottomImage.setAttribute('style', 'display: block;');
+//     }
+// })
+
+
 
 
 var header = document.getElementById('nav-menu');

@@ -20,7 +20,7 @@
 <body>
 
     <!-- navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg shadow p-3">
+    <nav class="navbar navbar-expand-lg shadow p-3">
         <div class="container-fluid">
             <a href="{% url 'portfolio:portfolio_list' %}" class="navbar-brand">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -38,7 +38,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse font-monospace fs-5" id="main-nav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id='nav-menu'>
+                <ul class="navbar-nav me-auto my-2 mb-lg-0" id='nav-menu'>
                     <li class="nav-item">
                         <a href="{% url 'portfolio:portfolio_list' %}" class="nav-link active">Home</a>
                     </li>
@@ -50,9 +50,6 @@
                     </li>
                     <li class="nav-item">
                         <a href="#review" class="nav-link">Review</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'contact:contact' %}" class="btn p-2 fs-5">Contact</a>
                     </li>
 
                 </ul>
