@@ -220,10 +220,35 @@ hr {
     text-align: center;
 }
 
-@media (max-width: 989px){
+@media (max-width: 992px){
     .navbar .nav-link {
         width: 100px;
         margin: 10px 0;
     }
 }
+
+
+.page-link {
+    background-color: white;
+    color: var(--fifth-color);
+    border-color: var(--third-color);
+}
+
+.page-link:hover {
+    background-color: var(rgb(231, 219, 219));
+    border-color: var(--third-color);
+}
+
+.page-item.disabled .page-link {
+    background-color: white;
+    border: var(--third-color);
+    border-color: var(--third-color);
+}
+
+.page-item.active .page-link {
+    color: white;
+    background-color: var(--third-color);
+    border-color: var(--third-color);
+}
+
 
