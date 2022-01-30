@@ -20,7 +20,7 @@
                 <div class="my-4 px-5">
                     <ul class="list-inline text-center">
                         <li class="list-inline-item">
-                            <a href="{{ portfolio.github_url }}" class="nav-link">
+                            <a href="{{ portfolio.github_link }}" class="nav-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                                     class="bi bi-github" viewBox="0 0 16 16">
                                     <path
@@ -28,9 +28,9 @@
                                 </svg>
                             </a>
                         </li>
-                        {% if portfolio.website_url %}
+                        {% if portfolio.website_link %}
                         <li class="list-inline-item px-4">
-                            <a href="{{ portfolio.website_url }}" class="nav-link">
+                            <a href="{{ portfolio.website_link }}" class="nav-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                                     class="bi bi-globe" viewBox="0 0 16 16">
                                     <path
