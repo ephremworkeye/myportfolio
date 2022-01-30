@@ -30,7 +30,7 @@ class Portfolio(models.Model):
         return reverse('portfolio:portfolio_detail', args=[self.id, self.slug])
 
     class Meta:
-        ordering = ('-created_at',)
+        ordering = ('created_at',)
 
     def __str__(self):
         return self.name

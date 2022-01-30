@@ -28,6 +28,7 @@
                                 </svg>
                             </a>
                         </li>
+                        {% if portfolio.website_url %}
                         <li class="list-inline-item px-4">
                             <a href="{{ portfolio.website_url }}" class="nav-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
@@ -37,6 +38,7 @@
                                 </svg>
                             </a>
                         </li>
+                        {% endif %}
                     </ul>
                 </div>
                 {% if portfolio.model_design_url %}
