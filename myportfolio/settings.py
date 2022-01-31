@@ -29,7 +29,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = (os.environ.get('DEBUG_VALUE') == "True")
 
 
-ALLOWED_HOSTS = ["myephremprofile.herokuapp.com", "127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ["myephremprofile.herokuapp.com", "127.0.0.1",
+                 "localhost", 'www.myephrem.com', 'myephrem.com']
 
 
 # Application definition
