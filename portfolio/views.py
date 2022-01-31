@@ -72,5 +72,19 @@ def portfolio_search(request):
         return render(request, 'portfolio/portfolio_list.html')
 
 
+def port_page(request):
+    object_list = Portfolio.objects.filter(is_published=True)
+    paginator = Paginator(object_list, 3)
+    page = request.GET.get('page')
+    try:
+        portfolios = paginator.page(page)
+    except PageNotAnInteger:
+        portfolios = paginator.page(1)
+    except EmptyPage:
+        portfolios = paginator.page(paginator.num_pages)
+
+    return render(request, 'portfolio/port_pages.html', {'portfolios': portfolios})
+
+
 def about(request):
     return render(request, 'portfolio/about.html')
