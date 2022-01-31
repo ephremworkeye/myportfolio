@@ -73,4 +73,4 @@ def portfolio_search(request):
 
 
 def about(request):
-    return render('portfolio/about.html')
+    return render(request, 'portfolio/about.html')
