@@ -23,6 +23,7 @@ urlpatterns = [
     path('', include('portfolio.urls', namespace='portfolio')),
     path('contact/', include('contact.urls', namespace='contact')),
     path('account/', include('account.urls', namespace='account')),
+    path('skill/', include('skill.urls', namespace='skill')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
