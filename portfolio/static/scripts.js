@@ -1,18 +1,3 @@
-// alert('hello world');
-// const body = document.querySelector('body');
-// const bottomImages = document.querySelectorAll('');
-
-
-// bottomImages.forEach(bottomImage => {
-//     if (body.style.backgroundColor !== 'white') {
-//         bottomImage.setAttribute('style', 'display: none;')
-//     } else {
-//         bottomImage.setAttribute('style', 'display: block;');
-//     }
-// })
-
-
-
 
 var header = document.getElementById('nav-menu');
 var navLinks = header.getElementsByClassName('nav-link');
@@ -45,6 +30,6 @@ const copyRight = document.querySelector('.copy-right');
 const d = new Date();
 const yearPart = d.getFullYear();
 
-copyRight.textContent = `${yearPart} ephrempro: All rights reserved`;
+copyRight.textContent = `${yearPart} myephrem: All rights reserved`;
 
 
