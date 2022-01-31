@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+{% block title %}search{% endblock %}
+
+{% block content %}
+
+<!-- about -->
+
+<section class="mt-5">
+    <div class="container py-3">
+        <div class="text-center">
+            <h2 class="display-5 font-monospace ">About</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row g-3 justify-content-around align-items-center">
+            <div class="col-lg-5">
+                <img class="img-fluid rounded float-start" src="{% static 'images/about2.png' %}" alt="">
+            </div>
+            <div class="col-lg-5">
+                <p class="text-lead  fs-5 align-middle">
+                    I am a full stack developer mainly based on Python, Django framework, and PostgreSQL and SQL BI
+                    developer with natural curiosity and passion for solving problems, work on solution design
+                    challenges in reliability, speed and scale
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end about -->
+
+{% endblock %}

@@ -70,3 +70,7 @@ def portfolio_search(request):
         return render(request, 'portfolio/search.html', {'query': query, 'results': results})
     else:
         return render(request, 'portfolio/portfolio_list.html')
+
+
+def about(request):
+    return render('portfolio/about.html')
