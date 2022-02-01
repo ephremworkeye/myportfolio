@@ -144,7 +144,7 @@ body {
 }
 
 #search-space {
-  margin: 200px !important;
+  margin: 200px auto !important;
 }
 
 #detail-space {
