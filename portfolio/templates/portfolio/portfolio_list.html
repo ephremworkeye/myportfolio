@@ -24,7 +24,7 @@
                 </p>
                 <a href="{% url 'contact:contact' %}" class="btn btn-lg me-3 contact-btn my-3">Contace me</a>
                 {% for profile in profiles %}
-                <a href="{% url 'account:download' %}" download="{{ profile.resume.url }}"
+                <a href="{{ profile.resume.url }}" download="{{ profile.resume.url }}"
                     class="btn  btn-lg  me-3 my-3 download-btn">
                     Download Resume
                 </a>
